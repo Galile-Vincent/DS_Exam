@@ -1,200 +1,245 @@
 # 單元3評量 - 2-3 Tree & 2-3-4 Tree Quiz
-## 1142資料結構與演算法 | Score: 90/100
+## 1142 資料結構與演算法 | Score: 90/100
 
 ---
 
-## Q1. A 2-3 tree of height 5 has at most ______ nodes.
+# Quick View：單元3評量 Q1-Q30
 
-**Correct Answer: a. 121** ✅
+| 題號 | 試題重點 | 正確答案 | 結果 |
+|---|---|---|---|
+| 1 | A 2-3 tree of height 5 has at most ______ nodes. | a. 121 | ✅ |
+| 2 | A node that contains two keys and three children is called a ______. | d. 3-node | ✅ |
+| 3 | Each node in a 2-3-4 tree contains ______ keys. | c. one, two or three | ✅ |
+| 4 | Which of the following is TRUE about 2-3-4 tree? | a. each node has at most 4 children | ✅ |
+| 5 | Which is NOT a step for inserting a new key into a 2-3 tree? | c. merge two leaves into one node if necessary | ✅ |
+| 6 | If a node in a 2-3-4 tree has three children, it must contain ______ keys. | d. two | ✅ |
+| 7 | Search of an item on a 2-3-4 tree is ______. | d. O(log n) | ✅ |
+| 8 | Deletion of an item from a 2-3 tree is ______. | a. O(log n) | ✅ |
+| 9 | The height of a 2-3-4 tree that contains 300 items is at least ______. | c. 5 | ❌ |
+| 10 | The height of a 2-3 tree that contains 1023 items is at most ______. | b. 10 | ✅ |
+| 11 | The height of a binary search tree that contains 1023 items is at least ______. | c. 10 | ✅ |
+| 12 | Insertion of an item into a 2-3 tree is ______. | c. O(log n) | ✅ |
+| 13 | Which is FALSE about linear implementations of ADT table? | b. Unsorted array-based implementation is O(n) on insertion | ❌ |
+| 14 | _______ may occur during insertion of a new key into a 2-3 tree. | c. Splitting nodes | ✅ |
+| 15 | A node that contains one key and two children is called a ______. | a. 2-node | ✅ |
+| 16 | ______ implementation is O(log n) on retrieval of an item. | c. Sorted array-based | ✅ |
+| 17 | Insert 1, 2, 3, 8, 6, 4, 7 into a 2-3-4 tree: total nodes? | a. 4 | ✅ |
+| 18 | A 4-node contains at most ______ keys. | d. three | ✅ |
+| 19 | Insertion of an item into a 2-3-4 tree is ______. | c. O(log n) | ✅ |
+| 20 | Which is FALSE about 2-3-4 trees? | b. Insertion requires more steps than 2-3 tree | ✅ |
+| 21 | Insert 4, 5, 7, 1, 6, 9, 3 into a 2-3 tree: root key? | b. 5 | ✅ |
+| 22 | In a 2-3-4 tree, when a node is split, its parent cannot be a _____. | a. 4-node | ✅ |
+| 23 | ______ is NOT a balanced search tree. | c. Heap | ✅ |
+| 24 | In a 2-3 tree, what happens first if the key is deleted from an internal node? | b. swap it with the in-order successor | ✅ |
+| 25 | Binary search tree implementation is O(n) on ______. | a. traversal of all items | ✅ |
+| 26 | Which is FALSE about balanced search trees? | c. 2-3 tree is a binary tree | ✅ |
+| 27 | When the root of a 2-3 tree has no item after deleting a key, we _______. | b. remove the root | ✅ |
+| 28 | ______ is a tree in which all leaves are at the same level. | b. 2-3 tree | ✅ |
+| 29 | The balance of a _______ is sensitive to insertion order. | d. binary search tree | ✅ |
+| 30 | A 2-3 tree of height 5 has at least ______ nodes. | c. 31 | ✅ |
 
-**Explanation:** In a 2-3 tree, maximum nodes occur when every node is a 3-node (3 children). Total = 3^0 + 3^1 + 3^2 + 3^3 + 3^4 = 1 + 3 + 9 + 27 + 81 = **121**.
-
----
-
-## Q2. A node that contains two keys and three children is called a ______.
-
-**Correct Answer: d. 3-node** ✅
-
-**Explanation:** Node names are based on number of children. A node with 2 keys and 3 children = **3-node**. Rule: k children → k-1 keys.
-
----
-
-## Q3. Each node in a 2-3-4 tree contains ______ keys.
-
-**Correct Answer: c. one, two or three** ✅
-
-**Explanation:**
-- 2-node: 1 key, 2 children
-- 3-node: 2 keys, 3 children
-- 4-node: 3 keys, 4 children
-
-So each node contains **1, 2, or 3** keys.
-
----
-
-## Q4. Which of the following is TRUE about 2-3-4 tree?
-
-**Correct Answer: a. each node has at most 4 children** ✅
-
-**Explanation:** By definition, 2-3-4 tree nodes can have 2, 3, or 4 children. Max = **4 children** (a 4-node). It is NOT a binary tree.
-
----
-
-## Q5. Which of the following is NOT a step for inserting a new key into a 2-3 tree?
-
-**Correct Answer: c. merge two leaves into one node if necessary** ✅
-
-**Explanation:** Insertion steps: locate leaf → insert → **split** if overflow. Merging only happens during **deletion** (underflow). Merging is NOT an insertion step.
+**Total Score: 90 / 100（18/20 correct）**
 
 ---
 
-## Q6. If a node in a 2-3-4 tree has three children, it must contain ______ keys.
+## 試題 1
+**A 2-3 tree of height 5 has at most ______ nodes.**
 
-**Correct Answer: d. two** ✅
-
-**Explanation:** 3 children → 3-node → **2 keys**. Formula: k children = k-1 keys.
-
----
-
-## Q7. Search of an item on a 2-3-4 tree is ______.
-
-**Correct Answer: d. O(log n)** ✅
-
-**Explanation:** 2-3-4 tree is always balanced. Height = O(log n). Search traverses root to leaf = **O(log n)**.
+> **正確答案：a. 121** ✅  
+> Maximum nodes occur when every node is a 3-node.  
+> Total = 3^0 + 3^1 + 3^2 + 3^3 + 3^4 = 1 + 3 + 9 + 27 + 81 = **121**.
 
 ---
 
-## Q8. Deletion of an item from a 2-3 tree is ______.
+## 試題 2
+**A node that contains two keys and three children is called a ______.**
 
-**Correct Answer: a. O(log n)** ✅
-
-**Explanation:** Deletion traverses the tree (O(log n)) and may redistribute/merge nodes upward. At most O(log n) operations → total **O(log n)**.
-
----
-
-## Q9. The height of a 2-3-4 tree that contains 300 items is at least ______.
-
-**My Answer: a. 4** ❌ | **Correct Answer: c. 5**
-
-**Explanation:** Minimum height = when every node is a 4-node. Max items at height h (1-indexed) = (4^h - 1)/3.
-- h=4: (4^4-1)/3 = 85 < 300 ✗
-- h=5: (4^5-1)/3 = 341 >= 300 ✓
-
-So minimum height = **5** (when height is counted starting from 1).
+> **正確答案：d. 3-node** ✅  
+> Node names are based on the number of children.  
+> A node with 2 keys and 3 children is a **3-node**.  
+> Rule: k children -> k - 1 keys.
 
 ---
 
-## Q10. The height of a 2-3 tree that contains 1023 items is at most ______.
+## 試題 3
+**Each node in a 2-3-4 tree contains ______ keys.**
 
-**Correct Answer: b. 10** ✅
-
-**Explanation:** Maximum height = when every node is a 2-node. Max items at height h = 2^h - 1. So 2^h - 1 >= 1023 → h >= 10. Max height = **10**.
-
----
-
-## Q11. The height of a binary search tree that contains 1023 items is at least ______.
-
-**Correct Answer: c. 10** ✅
-
-**Explanation:** Minimum height BST = perfectly balanced. 2^h - 1 >= 1023 → h >= 10. Min height = **10** (since 1023 = 2^10 - 1, perfect binary tree).
+> **正確答案：c. one, two or three** ✅  
+> 2-node has 1 key, 3-node has 2 keys, and 4-node has 3 keys.  
+> Therefore, each node contains **1, 2, or 3** keys.
 
 ---
 
-## Q12. Insertion of an item into a 2-3 tree is ______.
+## 試題 4
+**Which of the following is TRUE about 2-3-4 tree?**
 
-**Correct Answer: c. O(log n)** ✅
-
-**Explanation:** Locate leaf O(log n) + at most O(log n) node splits upward = **O(log n)** total.
-
----
-
-## Q13. Which of the following is FALSE about linear implementations of ADT table?
-
-**My Answer: a.** ❌ | **Correct Answer: b. Unsorted array-based implementation is O(n) on insertion**
-
-**Explanation:**
-- a. Unsorted pointer-based deletion: O(n) to find → TRUE
-- **b. Unsorted array-based insertion: O(1) (append to end) — so saying O(n) is FALSE** ✓
-- c. Sorted pointer-based deletion: O(n) to find → TRUE
-- d. Sorted array-based insertion: O(n) to shift → TRUE
+> **正確答案：a. each node has at most 4 children** ✅  
+> In a 2-3-4 tree, a node can have 2, 3, or 4 children.  
+> The maximum is **4 children**, so it is not a binary tree.
 
 ---
 
-## Q14. _______ may occur during the insertion of a new key into a 2-3 tree.
+## 試題 5
+**Which of the following is NOT a step for inserting a new key into a 2-3 tree?**
 
-**Correct Answer: c. Splitting nodes** ✅
-
-**Explanation:** When a node overflows during insertion, it is **split** (middle key promoted to parent). Merging occurs during deletion. Redistribution is for deletion too.
-
----
-
-## Q15. A node that contains one key and two children is called a ______.
-
-**Correct Answer: a. 2-node** ✅
-
-**Explanation:** Named by number of children:
-- 2-node: 1 key, **2** children
-- 3-node: 2 keys, 3 children
-- 4-node: 3 keys, 4 children
+> **正確答案：c. merge two leaves into one node if necessary** ✅  
+> Insertion steps are: locate leaf -> insert -> **split** if overflow occurs.  
+> Merging happens during **deletion**, not insertion.
 
 ---
 
-## Q16. ______ implementation is O(log n) on retrieval of an item.
+## 試題 6
+**If a node in a 2-3-4 tree has three children, it must contain ______ keys.**
 
-**Correct Answer: c. Sorted array-based** ✅
-
-**Explanation:** Only **sorted array** supports binary search → O(log n). Linked list (pointer-based) cannot do binary search (no random access). Unsorted → O(n) linear search.
-
----
-
-## Q17. If we insert 1, 2, 3, 8, 6, 4, 7 one by one to build a 2-3-4 tree, there are ______ nodes in total.
-
-**Correct Answer: a. 4** ✅
-
-**Explanation (step-by-step):**
-1. Insert 1: [1] — 1 node
-2. Insert 2: [1,2] — 1 node
-3. Insert 3: [1,2,3] — 1 node (full 4-node)
-4. Insert 8: split [1,2,3], promote 2 → root=[2], left=[1], right=[3,8] — 3 nodes
-5. Insert 6: → right becomes [3,6,8] — 3 nodes
-6. Insert 4: [3,4,6,8] overflow → split, promote 6 → root=[2,6], children=[1],[3,4],[8] — 4 nodes
-7. Insert 7: 7 goes into [8] → [7,8] — **4 nodes** total
+> **正確答案：d. two** ✅  
+> 3 children means the node is a 3-node.  
+> Rule: k children -> k - 1 keys, so 3 children -> **2 keys**.
 
 ---
 
-## Q18. A 4-node contains at most ______ keys.
+## 試題 7
+**Search of an item on a 2-3-4 tree is ______.**
 
-**Correct Answer: d. three** ✅
-
-**Explanation:** A 4-node has 4 children and exactly **3 keys**. Formula: k-node has k-1 keys.
-
----
-
-## Q19. Insertion of an item into a 2-3-4 tree is ______.
-
-**Correct Answer: c. O(log n)** ✅
-
-**Explanation:** 2-3-4 tree uses **top-down insertion**: split 4-nodes on the way down, insert at leaf. Single pass = **O(log n)**. More efficient than 2-3 tree (no bottom-up backtracking needed).
+> **正確答案：d. O(log n)** ✅  
+> A 2-3-4 tree is always balanced.  
+> Search travels from root to leaf, so the time complexity is **O(log n)**.
 
 ---
 
-## Q20. Which of the following is FALSE about 2-3-4 trees?
+## 試題 8
+**Deletion of an item from a 2-3 tree is ______.**
 
-**Correct Answer: b. Insertion on a 2-3-4 tree requires more steps than that on a 2-3 tree** ✅
-
-**Explanation:** This is **FALSE**. 2-3-4 tree insertion is actually **faster** than 2-3 tree insertion because:
-- 2-3-4: Top-down splits, single pass, no backtracking
-- 2-3: Bottom-up splits, may need to travel back up to root
+> **正確答案：a. O(log n)** ✅  
+> Deletion follows a path whose length is the tree height.  
+> Since a 2-3 tree is balanced, deletion is **O(log n)** even with redistribution or merging.
 
 ---
 
-# 單元3評量 — 新題目（試題 11–20）
-**課程：** 1142 資料結構與演算法(遠距) [CS217E]  
-**滿分：** 100 分 ｜ **得分：** 100 分
+## 試題 9
+**The height of a 2-3-4 tree that contains 300 items is at least ______.**
+
+> **我的答案：a. 4** ❌  
+> **正確答案：c. 5**
+>
+> Minimum height occurs when every node is a 4-node.  
+> Max items at height h = (4^h - 1) / 3.  
+> h = 4: (4^4 - 1) / 3 = 85 < 300  
+> h = 5: (4^5 - 1) / 3 = 341 >= 300  
+> Therefore, the minimum height is **5**.
+
+---
+
+## 試題 10
+**The height of a 2-3 tree that contains 1023 items is at most ______.**
+
+> **正確答案：b. 10** ✅  
+> Maximum height occurs when every node is a 2-node.  
+> Max items at height h = 2^h - 1.  
+> 2^10 - 1 = 1023, so the maximum height is **10**.
 
 ---
 
 ## 試題 11
+**The height of a binary search tree that contains 1023 items is at least ______.**
+
+> **正確答案：c. 10** ✅  
+> Minimum height occurs in a perfectly balanced BST.  
+> 2^h - 1 >= 1023, so h >= 10.  
+> Since 1023 = 2^10 - 1, the minimum height is **10**.
+
+---
+
+## 試題 12
+**Insertion of an item into a 2-3 tree is ______.**
+
+> **正確答案：c. O(log n)** ✅  
+> Locating the leaf takes O(log n).  
+> Splits may move upward, but at most along the tree height.  
+> Total time complexity is **O(log n)**.
+
+---
+
+## 試題 13
+**Which of the following is FALSE about linear implementations of ADT table?**
+
+> **我的答案：a.** ❌  
+> **正確答案：b. Unsorted array-based implementation is O(n) on insertion**
+>
+> Unsorted array-based insertion can append to the end, so it is **O(1)**.  
+> Therefore, saying it is O(n) is **FALSE**.  
+> Sorted array-based insertion is O(n) because elements may need to shift.
+
+---
+
+## 試題 14
+**_______ may occur during the insertion of a new key into a 2-3 tree.**
+
+> **正確答案：c. Splitting nodes** ✅  
+> When insertion causes overflow, the node is **split** and the middle key is promoted.  
+> Merging and redistribution are related to deletion.
+
+---
+
+## 試題 15
+**A node that contains one key and two children is called a ______.**
+
+> **正確答案：a. 2-node** ✅  
+> A node is named by its number of children.  
+> A 2-node has 1 key and **2 children**.
+
+---
+
+## 試題 16
+**______ implementation is O(log n) on retrieval of an item.**
+
+> **正確答案：c. Sorted array-based** ✅  
+> A sorted array supports binary search, so retrieval is **O(log n)**.  
+> Pointer-based lists do not support direct random access, and unsorted structures require linear search.
+
+---
+
+## 試題 17
+**If we insert 1, 2, 3, 8, 6, 4, 7 one by one to build a 2-3-4 tree, there are ______ nodes in total.**
+
+> **正確答案：a. 4** ✅  
+> Insert 1, 2, 3 -> root becomes [1,2,3].  
+> Insert 8 -> split [1,2,3], promote 2, giving root [2] with children [1] and [3,8].  
+> Insert 6 -> right child becomes [3,6,8].  
+> Insert 4 -> split [3,4,6,8], promote 6, giving root [2,6] and children [1], [3,4], [8].  
+> Insert 7 -> child [8] becomes [7,8].  
+> Total nodes = **4**.
+
+---
+
+## 試題 18
+**A 4-node contains at most ______ keys.**
+
+> **正確答案：d. three** ✅  
+> A 4-node has 4 children and exactly **3 keys**.  
+> Rule: k-node -> k - 1 keys.
+
+---
+
+## 試題 19
+**Insertion of an item into a 2-3-4 tree is ______.**
+
+> **正確答案：c. O(log n)** ✅  
+> 2-3-4 tree insertion uses top-down splitting.  
+> The algorithm makes one root-to-leaf pass, so insertion is **O(log n)**.
+
+---
+
+## 試題 20
+**Which of the following is FALSE about 2-3-4 trees?**
+
+> **正確答案：b. Insertion on a 2-3-4 tree requires more steps than that on a 2-3 tree** ✅  
+> This statement is **FALSE**.  
+> 2-3-4 tree insertion usually needs fewer steps because it splits 4-nodes on the way down.  
+> 2-3 tree insertion may split bottom-up and travel back toward the root.
+
+---
+
+## 試題 21
 **If we insert 4, 5, 7, 1, 6, 9, 3 one by one to build a 2-3 tree, the key on the root is ______.**
 
 - a. 3
@@ -202,11 +247,12 @@ So minimum height = **5** (when height is counted starting from 1).
 - c. 6
 - d. 4
 
-> **正確答案：5**
+> **正確答案：5**  
+> 插入並分裂節點後，中間值 **5** 會被提升到 root。
 
 ---
 
-## 試題 12
+## 試題 22
 **In a 2-3-4 tree, when a node is split, its parent cannot possibly be a ____.**
 
 - a. **4-node** ✅
@@ -219,7 +265,7 @@ So minimum height = **5** (when height is counted starting from 1).
 
 ---
 
-## 試題 13
+## 試題 23
 **______ is NOT a balanced search tree.**
 
 - a. 2-3 tree
@@ -228,11 +274,11 @@ So minimum height = **5** (when height is counted starting from 1).
 - d. 2-3-4 tree
 
 > **正確答案：Heap**  
-> Heap 是完全二元樹，但不是搜尋樹（不符合 BST 性質），也不是 balanced search tree。
+> Heap 是完全二元樹，但不是搜尋樹，因為它不符合 BST 的搜尋順序性質。
 
 ---
 
-## 試題 14
+## 試題 24
 **In a 2-3 tree, we first _______ if the key is deleted from an internal node.**
 
 - a. merge two nodes
@@ -241,11 +287,11 @@ So minimum height = **5** (when height is counted starting from 1).
 - d. remove the root
 
 > **正確答案：swap it with the in-order successor**  
-> 刪除 internal node 的 key 時，先與中序後繼者交換，再刪除葉節點上的值。
+> 刪除 internal node 的 key 時，先與 in-order successor 交換，再刪除葉節點上的值。
 
 ---
 
-## 試題 15
+## 試題 25
 **Binary search tree implementation is O(n) on ______.**
 
 - a. **traversal of all items** ✅
@@ -254,11 +300,11 @@ So minimum height = **5** (when height is counted starting from 1).
 - d. retrieval of an item
 
 > **正確答案：traversal of all items**  
-> Traversal（中序走訪）固定需要訪問所有 n 個節點，故為 O(n)。
+> Traversal 必須訪問所有 n 個節點，因此時間複雜度固定為 **O(n)**。
 
 ---
 
-## 試題 16
+## 試題 26
 **Which of the following is FALSE about balanced search trees?**
 
 - a. 2-3 tree is always balanced
@@ -271,7 +317,7 @@ So minimum height = **5** (when height is counted starting from 1).
 
 ---
 
-## 試題 17
+## 試題 27
 **When the root of a 2-3 tree has no item after deleting a key, we _______.**
 
 - a. merge two nodes
@@ -284,7 +330,7 @@ So minimum height = **5** (when height is counted starting from 1).
 
 ---
 
-## 試題 18
+## 試題 28
 **______ is a tree in which all leaves are at the same level.**
 
 - a. AVL tree
@@ -293,11 +339,11 @@ So minimum height = **5** (when height is counted starting from 1).
 - d. Heap
 
 > **正確答案：2-3 tree**  
-> 2-3 tree 保證所有葉節點在同一層（perfectly balanced）。
+> 2-3 tree 保證所有葉節點都在同一層，因此是 perfectly balanced。
 
 ---
 
-## 試題 19
+## 試題 29
 **The balance of a _______ is sensitive to the order in which items are inserted into it.**
 
 - a. 2-3 tree
@@ -306,11 +352,11 @@ So minimum height = **5** (when height is counted starting from 1).
 - d. **binary search tree** ✅
 
 > **正確答案：binary search tree**  
-> BST 的樹形（高度）完全取決於插入順序，最差情況退化為 O(n) 的線性鏈。
+> BST 的形狀與高度會受到插入順序影響；最差情況可能退化成線性鏈。
 
 ---
 
-## 試題 20
+## 試題 30
 **A 2-3 tree of height 5 has at least ______ nodes.**
 
 - a. 120
@@ -319,41 +365,17 @@ So minimum height = **5** (when height is counted starting from 1).
 - d. 121
 
 > **正確答案：31**  
-> 最少節點時，所有節點都是 2-node（最小分支）：  
-> 各層節點數：1 + 2 + 4 + 8 + 16 = **31**
+> 最少節點時，所有節點都是 2-node。  
+> 各層節點數：1 + 2 + 4 + 8 + 16 = **31**。
 
-## Summary Table
+---
 
-| Q  | Question (Short)                              | Correct Answer                       | Result |
-|----|-----------------------------------------------|--------------------------------------|--------|
-| 1  | Max nodes in 2-3 tree, height 5               | a. 121                               | ✅     |
-| 2  | Node with 2 keys & 3 children                 | d. 3-node                            | ✅     |
-| 3  | Keys per node in 2-3-4 tree                   | c. one, two or three                 | ✅     |
-| 4  | TRUE about 2-3-4 tree                         | a. at most 4 children per node       | ✅     |
-| 5  | NOT a step for 2-3 tree insertion             | c. merge two leaves                  | ✅     |
-| 6  | Keys in node with 3 children (2-3-4)          | d. two                               | ✅     |
-| 7  | Search complexity on 2-3-4 tree               | d. O(log n)                          | ✅     |
-| 8  | Deletion complexity in 2-3 tree               | a. O(log n)                          | ✅     |
-| 9  | Min height of 2-3-4 tree with 300 items       | c. 5                                 | ❌     |
-| 10 | Max height of 2-3 tree with 1023 items        | b. 10                                | ✅     |
-| 11 | Min height of BST with 1023 items             | c. 10                                | ✅     |
-| 12 | Insertion complexity in 2-3 tree              | c. O(log n)                          | ✅     |
-| 13 | FALSE about linear ADT table implementations  | b. Unsorted array O(n) on insert     | ❌     |
-| 14 | What occurs during 2-3 tree insertion         | c. Splitting nodes                   | ✅     |
-| 15 | Node with 1 key & 2 children                  | a. 2-node                            | ✅     |
-| 16 | O(log n) retrieval implementation             | c. Sorted array-based                | ✅     |
-| 17 | Nodes in 2-3-4 tree (insert 1,2,3,8,6,4,7)   | a. 4                                 | ✅     |
-| 18 | Max keys in a 4-node                          | d. three                             | ✅     |
-| 19 | Insertion complexity in 2-3-4 tree            | c. O(log n)                          | ✅     |
-| 20 | FALSE about 2-3-4 trees                       | b. Insertion requires more steps     | ✅     |
+# Key Concepts to Remember
 
-**Total Score: 90 / 100 (18/20 correct)**
-
-### Key Concepts to Remember:
-- **Node naming**: k-node = k children, k-1 keys
+- **Node naming**: k-node = k children, k - 1 keys
 - **2-3 tree insertion**: bottom-up split on overflow
-- **2-3-4 tree insertion**: top-down split (more efficient)
-- **Merge**: only happens during DELETION (underflow)
-- **Split**: only happens during INSERTION (overflow)
-- **Sorted array**: only structure with O(log n) retrieval via binary search
-- Height formula: 2-3 tree with n items → max height = log2(n+1)
+- **2-3-4 tree insertion**: top-down split, usually more efficient
+- **Merge**: happens during deletion underflow
+- **Split**: happens during insertion overflow
+- **Sorted array**: supports O(log n) retrieval through binary search
+- **Height formula**: max-height 2-3 tree with n items uses 2^h - 1
