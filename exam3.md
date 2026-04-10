@@ -188,6 +188,140 @@ So minimum height = **5** (when height is counted starting from 1).
 
 ---
 
+# 單元3評量 — 新題目（試題 11–20）
+**課程：** 1142 資料結構與演算法(遠距) [CS217E]  
+**滿分：** 100 分 ｜ **得分：** 100 分
+
+---
+
+## 試題 11
+**If we insert 4, 5, 7, 1, 6, 9, 3 one by one to build a 2-3 tree, the key on the root is ______.**
+
+- a. 3
+- b. **5** ✅
+- c. 6
+- d. 4
+
+> **正確答案：5**
+
+---
+
+## 試題 12
+**In a 2-3-4 tree, when a node is split, its parent cannot possibly be a ____.**
+
+- a. **4-node** ✅
+- b. 2-node
+- c. 3-node
+- d. all the above
+
+> **正確答案：4-node**  
+> 在 2-3-4 tree 中，split 前會先確保 parent 不是 4-node，所以 parent 不可能是 4-node。
+
+---
+
+## 試題 13
+**______ is NOT a balanced search tree.**
+
+- a. 2-3 tree
+- b. AVL tree
+- c. **Heap** ✅
+- d. 2-3-4 tree
+
+> **正確答案：Heap**  
+> Heap 是完全二元樹，但不是搜尋樹（不符合 BST 性質），也不是 balanced search tree。
+
+---
+
+## 試題 14
+**In a 2-3 tree, we first _______ if the key is deleted from an internal node.**
+
+- a. merge two nodes
+- b. **swap it with the in-order successor** ✅
+- c. redistribute keys
+- d. remove the root
+
+> **正確答案：swap it with the in-order successor**  
+> 刪除 internal node 的 key 時，先與中序後繼者交換，再刪除葉節點上的值。
+
+---
+
+## 試題 15
+**Binary search tree implementation is O(n) on ______.**
+
+- a. **traversal of all items** ✅
+- b. insertion of an item
+- c. deletion of an item
+- d. retrieval of an item
+
+> **正確答案：traversal of all items**  
+> Traversal（中序走訪）固定需要訪問所有 n 個節點，故為 O(n)。
+
+---
+
+## 試題 16
+**Which of the following is FALSE about balanced search trees?**
+
+- a. 2-3 tree is always balanced
+- b. 2-3 tree is never taller than a minimum-height binary search tree
+- c. **2-3 tree is a binary tree** ✅
+- d. 2-3-4 tree requires more storage than a binary search tree
+
+> **正確答案：2-3 tree is a binary tree**（此敘述為 FALSE）  
+> 2-3 tree 的節點可以有 2 或 3 個子節點，不是 binary tree。
+
+---
+
+## 試題 17
+**When the root of a 2-3 tree has no item after deleting a key, we _______.**
+
+- a. merge two nodes
+- b. **remove the root** ✅
+- c. redistribute keys
+- d. swap it with the in-order successor
+
+> **正確答案：remove the root**  
+> 若 root 刪除後為空，代表樹的高度縮減，直接移除 root，樹高 -1。
+
+---
+
+## 試題 18
+**______ is a tree in which all leaves are at the same level.**
+
+- a. AVL tree
+- b. **2-3 tree** ✅
+- c. Binary search tree
+- d. Heap
+
+> **正確答案：2-3 tree**  
+> 2-3 tree 保證所有葉節點在同一層（perfectly balanced）。
+
+---
+
+## 試題 19
+**The balance of a _______ is sensitive to the order in which items are inserted into it.**
+
+- a. 2-3 tree
+- b. min heap
+- c. 2-3-4 tree
+- d. **binary search tree** ✅
+
+> **正確答案：binary search tree**  
+> BST 的樹形（高度）完全取決於插入順序，最差情況退化為 O(n) 的線性鏈。
+
+---
+
+## 試題 20
+**A 2-3 tree of height 5 has at least ______ nodes.**
+
+- a. 120
+- b. 32
+- c. **31** ✅
+- d. 121
+
+> **正確答案：31**  
+> 最少節點時，所有節點都是 2-node（最小分支）：  
+> 各層節點數：1 + 2 + 4 + 8 + 16 = **31**
+
 ## Summary Table
 
 | Q  | Question (Short)                              | Correct Answer                       | Result |
