@@ -309,3 +309,6 @@
 
 10. Q: With linear probing on a hash table of 100 locations, if there are totally 19 items in consecutive locations, the average length of the probe sequence for any unsuccessful search is equal to ______.
    A: d. 2.9
+
+11. Q: 運用雙重雜湊double hash作為雜湊表的碰撞解法collision resolution，搜尋存在值的比較次數number of comparisons等於其探索次數number of probes。
+   A: a. Disagree
