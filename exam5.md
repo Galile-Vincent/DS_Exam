@@ -18,6 +18,7 @@
 | 8 | Which of the following is NOT a problem of linear probing? | d. The probe sequence may not visit every location in the hash table | ✅ |
 | 9 | Given a hash table of 365 locations, the probability of a collision is higher than 50% if at least ______ items are assigned. | b. 23 | ✅ |
 | 10 | With linear probing on a hash table of 100 locations, if there are totally 19 items in consecutive locations, the average length of the probe sequence for any unsuccessful search is equal to ______. | d. 2.9 | ✅ |
+運用雙重雜湊double hash作為雜湊表的碰撞解法collision resolution，搜尋存在值的比較次數number of comparisons等於其探索次數number of probes。 Answer: Disgree
 
 **Total Score: 100 / 100（10/10 correct）**
 
